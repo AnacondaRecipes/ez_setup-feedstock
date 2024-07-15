@@ -23,21 +23,29 @@ requirements:
   build:
     - python
     - setuptools
+    - wheel
 
   run:
     - python
 
 test:
+  commands:
+    - pip check
   import:
     - ez_setup
 
 about:
-  home: https://code.activestate.com/pypm/ez-setup/
+  home: https://github.com/ActiveState/ez_setup
   license: MIT
   license_family: MIT
   summary: 'ez_setup.py and distribute_setup.py'
   dev_url: https://github.com/ActiveState/ez_setup
+  doc_url: https://github.com/ActiveState/ez_setup/blob/master/README.rst
 
 extra:
+  anaconda-services:
+    reason: Dependency for apache-airflow
+    recipe-maintainers:
+      - ianaobi
   recipe-maintainers:
     - pmlandwehr
